@@ -38,17 +38,17 @@ public class DBManager {
     public void addNotes(Notes notes){
         ContentValues cv = new ContentValues();
         cv.put(DBConstant.NOTES_TITLE,notes.getTitle());
-        cv.put(DBConstant.NOTES_TEXT,notes.getText()));
+        cv.put(DBConstant.NOTES_TEXT,notes.getText());
         db.insert(DBConstant.NOTES_TABLE_NAME,null,cv);
     }
     public void updateNotes(Notes notes){
         ContentValues cv = new ContentValues();
         cv.put(DBConstant.NOTES_TITLE,notes.getTitle());
-        cv.put(DBConstant.NOTES_TEXT,notes.getText()));
+        cv.put(DBConstant.NOTES_TEXT,notes.getText());
         db.update(DBConstant.NOTES_TABLE_NAME,cv,DBConstant.NOTES_ID + " = " + notes.getId(),null);
     }
     public void deleteNotes(Notes notes){
-        db.delete(DBConstant.NOTES_TABLE_NAME,cv,DBConstant.NOTES_ID + " = " + notes.getId(),null);
+        db.delete(DBConstant.NOTES_TABLE_NAME,DBConstant.NOTES_ID + " = " + notes.getId(),null);
     }
     public void openDB() {
         db = dbHelper.getWritableDatabase();
